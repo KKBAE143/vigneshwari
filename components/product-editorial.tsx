@@ -60,9 +60,9 @@ const detailIcons = [
 
 export function ProductEditorial({ product }: { product: Product }) {
   const views = [
-    { label: 'Front view', image: product.image, position: 'center' },
-    { label: 'Side view', image: product.altImage, position: 'center' },
-    { label: 'Drape detail', image: product.image, position: '70% center' },
+    { label: 'Full drape', image: product.image, position: 'center' },
+    { label: 'Editorial view', image: product.altImage, position: 'center' },
+    { label: 'Weave detail', image: '/images/detail-zari-border.png', position: 'center' },
   ]
 
   return (
@@ -80,7 +80,7 @@ export function ProductEditorial({ product }: { product: Product }) {
         <div className="grid gap-4 pt-5 lg:grid-cols-[1.18fr_.82fr]">
           <div className="flex flex-col gap-5">
             <figure className="relative min-h-[580px] overflow-hidden border border-accent/30 md:min-h-[820px]">
-              <Image src={product.image} alt={`${product.name} full drape editorial`} fill className="object-cover" sizes="(max-width:1024px) 100vw, 58vw" />
+              <Image src={product.altImage} alt={`${product.name} full drape editorial`} fill className="object-cover" sizes="(max-width:1024px) 100vw, 58vw" />
               <figcaption className="absolute left-5 top-1/2 max-w-36 -translate-y-1/2 bg-primary/90 p-5 font-serif text-lg leading-7 text-primary-foreground md:left-8 md:max-w-44 md:text-2xl">Simplicity is the keynote of true elegance.</figcaption>
             </figure>
             <div className="border-y border-accent/40 py-5 text-center">
@@ -103,10 +103,10 @@ export function ProductEditorial({ product }: { product: Product }) {
 
             <EditorialTitle>Fabric & details</EditorialTitle>
             <div className="grid grid-cols-3 gap-3">{[
-              { label: 'Premium soft silk', image: product.image, pos: '20% 70%' },
-              { label: 'Rich zari weaving', image: product.image, pos: '75% 75%' },
-              { label: 'Delicate motifs', image: product.altImage, pos: 'center' },
-            ].map((detail) => <figure key={detail.label} className="text-center"><div className="relative mx-auto aspect-square overflow-hidden rounded-full border border-accent/40"><Image src={detail.image} alt={detail.label} fill className="scale-[2.2] object-cover" style={{ objectPosition: detail.pos }} sizes="12vw" /></div><figcaption className="mt-2 text-[10px] font-semibold uppercase leading-4">{detail.label}</figcaption></figure>)}</div>
+              { label: 'Soft silk weave', image: '/images/detail-soft-silk.png', pos: 'center' },
+              { label: 'Rich zari border', image: '/images/detail-zari-border.png', pos: 'center' },
+              { label: 'Floral motif', image: '/images/detail-floral-motif.png', pos: 'center' },
+            ].map((detail) => <figure key={detail.label} className="text-center"><div className="relative mx-auto aspect-square overflow-hidden rounded-full border border-accent/40 shadow-sm"><Image src={detail.image} alt={detail.label} fill className="object-cover transition duration-500 hover:scale-110" sizes="12vw" /></div><figcaption className="mt-2 text-[10px] font-semibold uppercase leading-4 text-primary">{detail.label}</figcaption></figure>)}</div>
 
             <EditorialTitle>Saree details</EditorialTitle>
             <dl className="grid grid-cols-[90px_1fr] gap-x-3 gap-y-2 text-xs leading-5"><dt className="font-semibold uppercase">Fabric</dt><dd>{product.fabric}</dd><dt className="font-semibold uppercase">Work</dt><dd>Handwoven zari</dd><dt className="font-semibold uppercase">Pattern</dt><dd>Heritage motifs</dd><dt className="font-semibold uppercase">Occasion</dt><dd>{product.occasion}, festive, traditional</dd><dt className="font-semibold uppercase">Care</dt><dd>Dry clean only</dd></dl>
