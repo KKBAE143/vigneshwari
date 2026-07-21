@@ -15,5 +15,5 @@ export const metadata: Metadata = { title: { default: 'VIGNESHWARI — Timeless 
 export const viewport: Viewport = { themeColor: '#F5ECE5', colorScheme: 'light' }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className="bg-background"><body className={`${inter.variable} ${cormorant.variable} ${playfair.variable} font-sans antialiased`}><StoreProvider><SiteHeader /><main>{children}</main><SiteFooter /><Toaster /></StoreProvider>{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
+  return <html lang="en" className="bg-background" data-scroll-behavior="smooth"><body className={`${inter.variable} ${cormorant.variable} ${playfair.variable} font-sans antialiased`}><StoreProvider><SiteHeader /><main>{children}</main><SiteFooter /><Toaster /></StoreProvider>{process.env.NODE_ENV === 'production' && <Analytics />}</body></html>
 }

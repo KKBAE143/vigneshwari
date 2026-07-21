@@ -14,7 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
   const discount = product.comparePrice ? Math.round((1 - product.price / product.comparePrice) * 100) : 0
   return <article className="group flex min-w-0 flex-col gap-4 transition-transform duration-500 hover:-translate-y-1">
     <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-      <Link href={`/products/${product.slug}`} aria-label={`View ${product.name}`}>
+      <Link href={`/products/${product.slug}`} aria-label={`View ${product.name}`} className="relative block size-full">
         <Image src={product.image} alt={product.name} fill className="object-cover transition duration-700 group-hover:scale-105 group-hover:opacity-0" sizes="(max-width: 768px) 50vw, 25vw" />
         <Image src={product.altImage} alt="" fill className="object-cover opacity-0 transition duration-700 group-hover:scale-105 group-hover:opacity-100" sizes="(max-width: 768px) 50vw, 25vw" />
       </Link>
