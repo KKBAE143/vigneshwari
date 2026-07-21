@@ -21,7 +21,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="absolute left-3 top-3 flex gap-2">{product.isNew && <Badge>New</Badge>}{discount > 0 && <Badge variant="secondary">-{discount}%</Badge>}</div>
       <div className="absolute right-3 top-3 flex flex-col gap-2">
         <Button variant="secondary" size="icon" onClick={() => toggleWishlist(product.slug)} aria-label={saved ? 'Remove from wishlist' : 'Add to wishlist'}><Heart fill={saved ? 'currentColor' : 'none'} /></Button>
-        <Button variant="secondary" size="icon" render={<Link href={`/products/${product.slug}`} aria-label="Quick view" />}><Eye /></Button>
+        <Button variant="secondary" size="icon" nativeButton={false} render={<Link href={`/products/${product.slug}`} aria-label="Quick view" />}><Eye /></Button>
       </div>
     </div>
     <div className="flex flex-col gap-2">
