@@ -5,6 +5,7 @@ import { products, formatPrice } from '@/lib/catalog'
 import { ProductActions } from '@/components/product-actions'
 import { ProductCard } from '@/components/product-card'
 import { ProductGallery } from '@/components/product-gallery'
+import { ProductEditorial } from '@/components/product-editorial'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
@@ -36,7 +37,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       </div>
     </div>
 
-    <section className="mt-12 bg-card py-12 md:py-16"><div className="site-container grid gap-12 lg:grid-cols-2 lg:gap-24"><div className="text-center"><Sparkles className="mx-auto size-7 text-accent" /><h2 className="mt-4 text-2xl uppercase tracking-[.12em]">Product details</h2><p className="mx-auto mt-5 max-w-lg text-sm leading-7 text-muted-foreground">A true work of textile artistry, woven by master craftspeople and finished with traditional motifs in luminous zari. Created for weddings, ceremonies, and treasured occasions.</p></div><Accordion><AccordionItem value="delivery"><AccordionTrigger>Delivery & returns</AccordionTrigger><AccordionContent>Preview content: delivery estimates and returns will connect to the custom commerce backend in Phase 2.</AccordionContent></AccordionItem><AccordionItem value="care"><AccordionTrigger>Care instructions</AccordionTrigger><AccordionContent>Dry clean only. Store in breathable muslin, away from direct sunlight, and air periodically.</AccordionContent></AccordionItem><AccordionItem value="guide"><AccordionTrigger>Saree & fabric guide</AccordionTrigger><AccordionContent>Includes a 5.5 metre saree and matching unstitched blouse piece. Natural variations celebrate the handmade process.</AccordionContent></AccordionItem></Accordion></div></section>
+    <ProductEditorial product={product} />
+
+    <section className="bg-card py-12 md:py-16"><div className="site-container grid gap-12 lg:grid-cols-2 lg:gap-24"><div className="text-center"><Sparkles className="mx-auto size-7 text-accent" /><h2 className="mt-4 text-2xl uppercase tracking-[.12em]">Product details</h2><p className="mx-auto mt-5 max-w-lg text-sm leading-7 text-muted-foreground">A true work of textile artistry, woven by master craftspeople and finished with traditional motifs in luminous zari. Created for weddings, ceremonies, and treasured occasions.</p></div><Accordion><AccordionItem value="delivery"><AccordionTrigger>Delivery & returns</AccordionTrigger><AccordionContent>Preview content: delivery estimates and returns will connect to the custom commerce backend in Phase 2.</AccordionContent></AccordionItem><AccordionItem value="care"><AccordionTrigger>Care instructions</AccordionTrigger><AccordionContent>Dry clean only. Store in breathable muslin, away from direct sunlight, and air periodically.</AccordionContent></AccordionItem><AccordionItem value="guide"><AccordionTrigger>Saree & fabric guide</AccordionTrigger><AccordionContent>Includes a 5.5 metre saree and matching unstitched blouse piece. Natural variations celebrate the handmade process.</AccordionContent></AccordionItem></Accordion></div></section>
 
     <section className="site-container section-space"><div className="mb-10 text-center"><p className="text-xs font-semibold uppercase tracking-[.25em] text-primary">Curated for you</p><h2 className="mt-3 text-4xl uppercase tracking-[.08em]">You may also love</h2></div><div className="grid grid-cols-2 gap-5 md:grid-cols-4">{recommendations.map((item) => <ProductCard key={item.slug} product={item} />)}</div></section>
   </main>
